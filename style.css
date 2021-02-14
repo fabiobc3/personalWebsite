@@ -56,6 +56,22 @@ a{
     .col-12 {flex-basis: 100%;}
 }
 
+@media all and (max-width: 768px){
+    
+    .col-1 {flex-basis: 100;} /* width works too */
+    .col-2 {flex-basis: 100;}
+    .col-3 {flex-basis: 100;}
+    .col-4 {flex-basis: 100;}
+    .col-5 {flex-basis: 100;}
+    .col-6 {flex-basis: 100;}
+    .col-7 {flex-basis: 100;}
+    .col-8 {flex-basis: 100;}
+    .col-9 {flex-basis: 100;}
+    .col-10 {flex-basis: 100%;}
+    .col-11 {flex-basis: 100%;}
+    .col-12 {flex-basis: 100%;}
+}
+
 .row{
 	display: flex;
     flex-wrap: wrap;	
@@ -71,6 +87,10 @@ a{
     border-radius: 10%;
     width: 250px;
     height: 250px;
+    object-fit: cover;
+}
+
+.imageStyle2{
     object-fit: cover;
 }
 
