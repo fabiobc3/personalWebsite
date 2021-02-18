@@ -1,4 +1,11 @@
 {
+    "navbar" : 
+    {
+        "About" : "About",
+        "News" : "News",
+        "Projects" : "Projects"
+    },
+
     "about" :
     {
         "name" : "Fabio Beneti Costa",
@@ -33,5 +40,20 @@
             "info" : "Coded the game Othello (aka Reversi) in Python, implementing Artificial Intelligence through a Minimax Algorithm with Alpha-Beta pruning.",
             "link" : "othello.html"
         }
-    ]
+    ],
+
+    "othello":
+    {
+        "heading" : "Othello.py",
+        "info" : "The game Othello, also known as Reversi, is a board game where two players try to get as many as their pieces in the board. One player plays the black pieces and another the white ones. Taking turns, a player puts a one of his pieces in the board, trying to flip the other player's pieces into his own. I coded the game in python, implementing Artificial Intelligence through a Minimax Algorithm with Alpha-Beta pruning.",
+        "learnMoreLinks":
+        [
+            {
+                "othelloWiki" : "https://en.wikipedia.org/wiki/Minimax",
+                "minimaxWiki" : "https://en.wikipedia.org/wiki/Minimax",
+                "alphabetaWiki" : "https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning"
+            }
+        ],
+        "returnToMainPage" : "landing.html"
+    }
 }
