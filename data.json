@@ -1,0 +1,37 @@
+{
+    "about" :
+    {
+        "name" : "Fabio Beneti Costa",
+        "image" : "profilePic.tif",
+        "description" : "Student at Boston College Carroll School of Management perusing a double major in Finance and Computer Science. Outside of class I have a work-study position as a developer, am a volunteer business consultant, and a competitive cyclist. Born and raised in São Paulo, Brasil. Avid Reader, Recreational Pianist, Puzzle Enthusiast. Feel free to reach me at: fabiobc3@gmail.com"
+    },
+
+    "news" : 
+    [
+        {
+            "info" : "Completing spring semester of sophomore year at Boston College",
+            "date" : "Feb 3, 2021"
+        },
+        {
+            "info" : "Spent break in Brazil with family",
+            "date" : "Dec 19, 2020"
+        },
+        {
+            "info" : "Worked during summer in Florida",
+            "date" : "Jul 20, 2020"
+        }
+        {
+            "info" : "Finished freshman year online because of COVID-19",
+            "date" : "Mar 15, 2020"
+        }
+    ],
+
+    "projects":
+    [
+        {
+            "name" : "Othello.py",
+            "info" : "Coded the game Othello (aka Reversi) in Python, implementing Artificial Intelligence through a Minimax Algorithm with Alpha-Beta pruning.",
+            "link" : "othello.html"
+        }
+    ]
+}
