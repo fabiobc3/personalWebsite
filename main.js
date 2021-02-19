@@ -4,7 +4,6 @@ fetch('data.json')
 })
 .then(data => {
   console.log(data);
-	// render HTML here
 });
 
 // function renderNavbar(page){}
