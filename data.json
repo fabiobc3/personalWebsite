@@ -54,6 +54,6 @@
                 "alphabetaWiki" : "https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning"
             }
         ],
-        "returnToMainPage" : "landing.html"
+        "returnToMainPage" : "index.html"
     }
 }
