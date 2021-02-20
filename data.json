@@ -1,16 +1,20 @@
 {
     "navbar" : 
     {
-        "About" : "About",
-        "News" : "News",
-        "Projects" : "Projects"
+        "about" : "About",
+        "news" : "News",
+        "projects" : "Projects"
     },
 
     "about" :
     {
         "name" : "Fabio Beneti Costa",
         "image" : "profilePic.tif",
-        "description" : "Student at Boston College Carroll School of Management perusing a double major in Finance and Computer Science. Outside of class I have a work-study position as a developer, am a volunteer business consultant, and a competitive cyclist. Born and raised in São Paulo, Brasil. Avid Reader, Recreational Pianist, Puzzle Enthusiast. Feel free to reach me at: fabiobc3@gmail.com"
+        "info1" : "Student at Boston College Carroll School of Management perusing a double major in ",
+        "major" : "Finance and Computer Science. ",
+        "info2" : "Outside of class I have a work-study position as a developer, am a volunteer business consultant, and a competitive cyclist ",
+        "info3" : ". Born and raised in São Paulo, Brasil. Avid Reader, Recreational Pianist, Puzzle Enthusiast. Feel free to reach me at: ",
+        "email" : "fabiobc3@gmail.com."
     },
 
     "news" : 
@@ -37,7 +41,9 @@
     [
         {
             "name" : "Othello.py",
-            "info" : "Coded the game Othello (aka Reversi) in Python, implementing Artificial Intelligence through a Minimax Algorithm with Alpha-Beta pruning.",
+            "info1" : "Coded the game Othello (aka Reversi) in ",
+            "pLanguage" : "Python,",
+            "info2" : " implementing Artificial Intelligence through a Minimax Algorithm with Alpha-Beta pruning.",
             "link" : "othello.html"
         }
     ],
