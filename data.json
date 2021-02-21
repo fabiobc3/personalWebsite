@@ -40,6 +40,7 @@
     "projects":
     [
         {
+            "id" : "othello",
             "name" : "Othello.py",
             "info1" : "Coded the game Othello (aka Reversi) in ",
             "pLanguage" : "Python,",
@@ -50,16 +51,26 @@
 
     "othello":
     {
-        "heading" : "Othello.py",
+        "title" : "Othello.py",
+        "image" : "othelloBoard.jpeg",
         "info" : "The game Othello, also known as Reversi, is a board game where two players try to get as many as their pieces in the board. One player plays the black pieces and another the white ones. Taking turns, a player puts a one of his pieces in the board, trying to flip the other player's pieces into his own. I coded the game in python, implementing Artificial Intelligence through a Minimax Algorithm with Alpha-Beta pruning.",
         "learnMoreLinks":
-        [
+        {
+            "wiki1":
             {
-                "othelloWiki" : "https://en.wikipedia.org/wiki/Minimax",
-                "minimaxWiki" : "https://en.wikipedia.org/wiki/Minimax",
-                "alphabetaWiki" : "https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning"
+                "title" : "Wiki Page",
+                "info" : "If you want to learn more about the details of the game check out this wikipedia page:",
+                "link" : "https://en.wikipedia.org/wiki/Minimax"
+            },
+            "wiki2":
+            {
+                "info" : "If you want to learn more about Minimax and Alpha-Beta pruning check out these wikipedia pages:",
+                "title1" : "Minimax Wiki Page",
+                "link1" : "https://en.wikipedia.org/wiki/Minimax",
+                "title2" : "Alpha-Beta Wiki Page",
+                "link2" : "https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning"
             }
-        ],
+        },
         "returnToMainPage" : "index.html"
     }
 }

@@ -3,6 +3,9 @@
 async function getData(){
     const response = await fetch('data.json');
     const data = await response.json();
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    console.log(queryString);
     console.log(data);
     renderMainPage(data);
 
@@ -35,7 +38,7 @@ function renderAbout(about){
     <!-- PICTURE AND ABOUT -->
     <div class="row">
         <div class="col-6">
-            <img class="imageStyle animate__animated animate__fadeInLeftBig" src="${about.image}" alt="">
+            <img class="imageStyle animate__animated animate__fadeInLeftBig" src=${about.image} alt="">
         </div>
         <div id="about" class="col-6 animate__animated animate__fadeInRightBig">
             <ul>
@@ -85,16 +88,39 @@ function renderProjects(projects){
         </div>
     </div>
     <!-- PROJECTS -->
-    <!-- PROJECT 1 -->
     <div id="row" class="col-12">
         <ul>
-            <div id="projects">
-                <h4>${projects[0].name} <i class="fas fa-chess-board"></i></h4>
-                <p>${projects[0].info1} <span class="highlight"> ${projects[0].pLanguage} </span> ${projects[0].info2} </p>
-            </div>
-            <a href="${projects[0].link} ">Learn More</a>
+            ${renderProjectItems(projects)}
         </ul>
     </div>`;
+}
+
+function renderProjectItems(projects){
+	return projects.map(d=>`
+    <div id="projects">
+        <h4>${d.name} <i class="fas fa-chess-board"></i></h4>
+        <p>${d.info1} <span class="highlight"> ${d.pLanguage} </span> ${d.info2} </p>
+    </div>
+    <a href="?project=${d.id}">Learn More</a>
+	`).join('');
+}
+
+function renderProject(project){
+    return`
+    <h1>${project.title}</h1>
+    <ul> 
+         <img src= ${project.image} alt="" class="imageStyle2">
+         <p>${project.info}</p>
+         <p>${project.learnMoreLinks.wiki1.info}</p>
+         <a href=${project.learnMoreLinks.wiki1.link} target="_blank">${project.learnMoreLinks.wiki1.title}</a>
+         <p>${project.learnMoreLinks.wiki2.info}</p>
+         <a href=${project.learnMoreLinks.wiki2.link1} target="_blank">${project.learnMoreLinks.wiki2.title1}</a>
+         <br>
+         <a href=${project.learnMoreLinks.wiki2.link2} target="_blank">${project.learnMoreLinks.wiki2.title2}</a>
+         <br>
+         <br>
+         <a href="index.html">Go Back to Main Page</a>
+    </ul>`;
 }
 
 function renderMainPage(data){
@@ -103,6 +129,12 @@ function renderMainPage(data){
         ${renderAbout(data.about)}
         ${renderNews(data.news)}
         ${renderProjects(data.projects)}
+    `;
+}
+
+function renderProjectPage(project){
+    document.querySelector('.container').innerHTML = `
+        ${renderProject(project)}
     `;
 }
 
