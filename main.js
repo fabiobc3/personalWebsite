@@ -23,11 +23,13 @@ fetch('data.json')
     const urlParams = new URLSearchParams(queryString);
     console.log(queryString);
     
-    if (urlParams.get("project")) {
-        const project = data.projects.filter(d=>d.id===project_id)[0]
-        renderProjectPage(project);
-     }else{
-              renderMainPage(data);
+    if (urlParams.get("project") === null){
+        renderMainPage(data);
+    } else {
+        let id = urlParams.get("project");
+        if (id == "othello"){
+            renderProjectPage(data.othello)
+        }
     }
 
     function renderNavbar(navbar){
