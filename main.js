@@ -59,9 +59,9 @@ fetch('data.json')
         <!-- PICTURE AND ABOUT -->
         <div class="row">
             <div class="col-6">
-                <img class="imageStyle animate__animated animate__fadeInLeftBig" src=${about.image} alt="">
+                <img class="imageStyle" src=${about.image} alt="">
             </div>
-            <div id="about" class="col-6 animate__animated animate__fadeInRightBig">
+            <div id="about" class="col-6">
                 <ul>
                     <h2>About</h2>
                     <p>${about.info1}<span class="highlight">${about.major}</span>${about.info2}<i class="fas fa-biking"></i>${about.info3}<span class="highlight2">${about.email}</span></p> 
@@ -72,31 +72,47 @@ fetch('data.json')
 
     function renderNews(news){
         return`
-        <div class="row">
-                <div class="col-12 animate__animated animate__fadeInUpBig">
-                    <h2>News</h2>
-                </div>
+            <div class="row">
+                    <div class="col-12">
+                        <h2>News</h2>
+                    </div>
+            </div>
+            <div class="search row">
+                <input type="search" name='news' placeholder="Search News...">
+            </div>
+            <div id="renderNewsItems">
+                ${renderNewsItems(news)}
+            </div>`
+    }
+
+    function renderNewsItems(news){
+        return`
+        <div id="news" class="row">
+        <div class="col-6">
+            <ul>
+                ${renderNewsItemsInfo(news)}
+            </ul>
         </div>
-        <div id="news" class="row animate__animated animate__fadeInUpBig">
-            <!-- NEWS -->
-            <div class="col-6">
-                <ul>
-                    <li>${news[0].info}</li>
-                    <li>${news[1].info}</li>
-                    <li>${news[2].info}</li>
-                    <li>${news[3].info}</li>
-                </ul>
-            </div>
-            <!-- DATES -->
-            <div class="col-6">
-                <ul>
-                    <li>${news[0].date}</li>
-                    <li>${news[1].date}</li>
-                    <li>${news[2].date}</li>
-                    <li>${news[3].date}</li>
-                </ul>
-            </div>
-        </div>`;
+        <div class="col-6">
+            <ul>
+                ${renderNewsItemsDate(news)}
+            </ul>
+        </div>
+    </div>`
+    }
+
+    function renderNewsItemsInfo(news){
+        return news.slice(0,3).map(d=>`
+        <li>${d.info}</li>
+        <br>
+        `).join("");
+    }
+    
+    function renderNewsItemsDate(news){
+        return news.slice(0,3).map(d=>`
+        <li>${d.date}</li>
+        <br>
+        `).join("");
     }
 
     function renderProjects(projects){
@@ -119,7 +135,7 @@ fetch('data.json')
     function renderProjectItems(projects){
         return projects.map(d=>`
         <div id="projects">
-            <h4>${d.name} <i class="fas fa-chess-board"></i></h4>
+            <h4>${d.name} ${d.logo}</h4>
             <p>${d.info1} <span class="highlight"> ${d.pLanguage} </span> ${d.info2} </p>
         </div>
         <a href="?project=${d.id}">Learn More</a>
@@ -132,16 +148,18 @@ fetch('data.json')
         <ul> 
             <img src= ${project.image} alt="" class="imageStyle2">
             <p>${project.info}</p>
-            <p>${project.learnMoreLinks.wiki1.info}</p>
-            <a href=${project.learnMoreLinks.wiki1.link} target="_blank">${project.learnMoreLinks.wiki1.title}</a>
-            <p>${project.learnMoreLinks.wiki2.info}</p>
-            <a href=${project.learnMoreLinks.wiki2.link1} target="_blank">${project.learnMoreLinks.wiki2.title1}</a>
-            <br>
-            <a href=${project.learnMoreLinks.wiki2.link2} target="_blank">${project.learnMoreLinks.wiki2.title2}</a>
+            ${renderProjectLink(project)}
             <br>
             <br>
-            <a href="index.html">Go Back to Main Page</a>
+            <a href="${project.returnToMainPage}">Go Back to Main Page</a>
         </ul>`;
+    }
+
+    function renderProjectLink(project){
+        return project.learnMoreLinks.map(d =>`
+        <p>${d.info}</p>
+        <a href=${d.link} target="_blank">${d.title}</a>
+        `).join("");
     }
 
     function renderMainPage(data){
@@ -158,4 +176,18 @@ fetch('data.json')
             ${renderProject(project)}
         `;
     }
+  
+    document.querySelector('input[name=news]')
+    .addEventListener('input', handlerNews);
+
+    function handlerNews(){
+        const keyword = this.value.toLowerCase();
+        const filteredNews = data.news.filter(n => {
+            return n.info.toLowerCase().includes(keyword) || n.date.toLowerCase().includes(keyword)
+        });
+        const newsSection = document.querySelector('#renderNewsItems');
+        newsSection.innerHTML = renderNewsItems(filteredNews); 
+        console.log(newsSection);
+    }
+
 });
