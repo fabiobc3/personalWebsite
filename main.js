@@ -130,11 +130,11 @@ fetch('data.json')
                 All
             </label>
 	        <label>
-	            <input type="checkbox" name="filter" value="personal">
+	            <input type="checkbox" name="filter" value="personal" checked>
                 Personal
 	        </label>
             <label>
-                <input type="checkbox" name="filter" value="mig">
+                <input type="checkbox" name="filter" value="mig" checked>
                 MIG
             </label>
         </div>
