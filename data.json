@@ -55,12 +55,12 @@
         },
         {
             "tag" : "all mig",
-            "id" : "othello",
-            "name" : "Othello.py",
-            "logo" : "<i class='fas fa-chess-board'></i>",
-            "info1" : "Coded the game Othello (aka Reversi) in ",
-            "pLanguage" : "Python,",
-            "info2" : " implementing Artificial Intelligence through a Minimax Algorithm with Alpha-Beta pruning.",
+            "id" : "mig",
+            "name" : "Machine Intelligence Group",
+            "logo" : "<i class='fas fa-desktop'></i>",
+            "info1" : "Co-Founder and Co-President of Boston College's ",
+            "pLanguage" : "Machine Intelligence Group (MIG)",
+            "info2" : " where students come together and work together on Machine Learning projects and competitions.",
             "link" : "othello.html"
         }
         

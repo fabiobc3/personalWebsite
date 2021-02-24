@@ -203,13 +203,21 @@ fetch('data.json')
         newsSection.innerHTML = renderNewsItems(filteredNews); 
     }
 
+    let filteredProjects;
     let buttons = document.querySelectorAll('input[name=filter]');
     buttons.forEach(cond=>cond.addEventListener('change', function(event){
         const val = cond.value;
         const isChecked = cond.checked;
-        const filteredProjects = data.projects.filter(n => {
+        if (filteredProjects === undefined || filteredProjects.length == 0){
+            filteredProjects = data.projects;
+        }
+        console.log(filteredProjects);
+        filteredProjects = filteredProjects.filter(n => {
             if (isChecked){
                 return n.tag.includes(val);
+            }
+            else{
+                return !n.tag.includes(val);
             }
         })
         const projectsSection = document.querySelector('#renderProjectItems');
