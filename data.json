@@ -44,6 +44,17 @@
     "projects":
     [
         {
+            "tag" : "all personal",
+            "id" : "othello",
+            "name" : "Othello.py",
+            "logo" : "<i class='fas fa-chess-board'></i>",
+            "info1" : "Coded the game Othello (aka Reversi) in ",
+            "pLanguage" : "Python,",
+            "info2" : " implementing Artificial Intelligence through a Minimax Algorithm with Alpha-Beta pruning.",
+            "link" : "othello.html"
+        },
+        {
+            "tag" : "all mig",
             "id" : "othello",
             "name" : "Othello.py",
             "logo" : "<i class='fas fa-chess-board'></i>",
@@ -52,6 +63,7 @@
             "info2" : " implementing Artificial Intelligence through a Minimax Algorithm with Alpha-Beta pruning.",
             "link" : "othello.html"
         }
+        
     ],
 
     "othello":
