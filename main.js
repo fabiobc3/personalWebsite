@@ -126,15 +126,15 @@ fetch('data.json')
         </div>
         <div class="filter">
 	        <label>
-	            <input type="checkbox" name="filter" value="all" checked>
+	            <input type="radio" name="filter" value="all" checked>
                 All
             </label>
 	        <label>
-	            <input type="checkbox" name="filter" value="personal" checked>
+	            <input type="radio" name="filter" value="personal">
                 Personal
 	        </label>
             <label>
-                <input type="checkbox" name="filter" value="mig" checked>
+                <input type="radio" name="filter" value="mig">
                 MIG
             </label>
         </div>
@@ -203,25 +203,16 @@ fetch('data.json')
         newsSection.innerHTML = renderNewsItems(filteredNews); 
     }
 
-    let filteredProjects;
     let buttons = document.querySelectorAll('input[name=filter]');
     buttons.forEach(cond=>cond.addEventListener('change', function(event){
         const val = cond.value;
         const isChecked = cond.checked;
-        if (filteredProjects === undefined || filteredProjects.length == 0){
-            filteredProjects = data.projects;
-        }
-        console.log(filteredProjects);
-        filteredProjects = filteredProjects.filter(n => {
+        const filteredProjects = data.projects.filter(n => {
             if (isChecked){
                 return n.tag.includes(val);
-            }
-            else{
-                return !n.tag.includes(val);
             }
         })
         const projectsSection = document.querySelector('#renderProjectItems');
         projectsSection.innerHTML = renderProjectItems(filteredProjects);
-        console.log(filteredProjects);
     }))
 });
