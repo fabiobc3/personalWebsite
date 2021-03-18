@@ -52,7 +52,7 @@
             "pLanguage" : "Python,",
             "info2" : " implementing Artificial Intelligence through a Minimax Algorithm with Alpha-Beta pruning.",
             "link" : "othello.html"
-        },
+        },        
         {
             "tag" : "all mig",
             "id" : "mig",
